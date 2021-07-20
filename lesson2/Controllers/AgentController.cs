@@ -62,14 +62,14 @@ namespace consoleApiApp.Controllers
             return Ok();
         }
 
-        [HttpGet("api/metrics/hdd/left/from/{fromTime}/to/{toTime}")]
-        public IActionResult GetMetricsFromHdd([FromRoute] TimeSpan fromTime, [FromRoute] TimeSpan toTime)
+        [HttpGet("api/metrics/hdd/left/from/{hdd_volume}")]
+        public IActionResult GetMetricsFromHdd([FromRoute] long hdd_volume)
         {
             return Ok();
         }
 
-        [HttpGet("api/metrics/ram/available/from/{fromTime}/to/{toTime}")]
-        public IActionResult GetMetricsFromRam([FromRoute] TimeSpan fromTime, [FromRoute] TimeSpan toTime)
+        [HttpGet("api/metrics/ram/available/from/{ram_volume}")]
+        public IActionResult GetMetricsFromRam([FromRoute] int ram_volume)
         {
             return Ok();
         }
