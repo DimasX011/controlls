@@ -88,7 +88,7 @@ namespace consoleApiApp.Controllers
 
         public AgentInfo()
         {
-            agents.Add(agent);  
+            agents.Add(agent);
         }
 
         public List<AgentInfo> Get()
