@@ -34,7 +34,7 @@ namespace consoleApiApp.Controllers
         {
             string cs = "Data Source=:memory:";
             string stm = "SELECT SQLITE_VERSION()";
-
+            _logger.LogInformation("Дата актуализации и версия СУБД", cs, stm);
 
             using (var con = new SQLiteConnection(cs))
             {
