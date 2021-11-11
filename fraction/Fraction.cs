@@ -54,12 +54,12 @@ namespace fraction
 
         public static Fraction operator *(Fraction fraction, Fraction fraction1)
         {
-            return new Fraction(fraction.multiplication(fraction.Numer,fraction1.Numer,fraction.Denumer, fraction1.Denumer,"*"),fraction1.Denumerator(fraction.Denumer, fraction1.Denumer));
+            return new Fraction(fraction.Numer * fraction1.Numer, fraction.Denumer * fraction1.Denumer);
         }
 
         public static Fraction operator /(Fraction fraction, Fraction fraction1)
         {
-            return new Fraction(fraction.multiplication(fraction.Numer, fraction1.Numer, fraction.Denumer, fraction1.Denumer, "/"), fraction1.Denumerator(fraction.Denumer, fraction1.Denumer));
+            return new Fraction(fraction.Numer * fraction1.Denumer, fraction.Denumer * fraction1.Numer);
         }
 
         public static bool operator ==(Fraction fraction, Fraction fraction1)
@@ -157,15 +157,19 @@ namespace fraction
             int Answer = 0;
             int denumer = Denumerator(den1, den2);
 
-            num1 = denumer / den1;
-            num2 = denumer / den2;
-            if (oper == "+")
+            if(oper == "+" || oper == "-")
             {
-                Answer = num1 + num2;
-            }
-            else if (oper == "-")
-            {
-                Answer = num1 - num2;
+                num1 = (denumer / den1) * num1;
+                num2 = (denumer / den2) * num2;
+                if (oper == "+")
+                {
+                    Answer = num1 + num2;
+                }
+                else if (oper == "-")
+                {
+                    Answer = num1 - num2;
+                }
+
             }
             else if (oper == "*")
             {
@@ -181,22 +185,6 @@ namespace fraction
             }
             return Answer;
 
-        }
-
-        public int multiplication(int num1,int num2,int den1,int den2, string oper)
-        {
-            int resdem = 0;
-            if (oper == "*")
-            {
-                 resdem = den1 * den2;
-            }
-            else
-            {
-                num2 = den2;
-                den2 = num2;
-                resdem = den1 * den2;
-            }
-            return resdem;
         }
 
         public int Nod(int n, int d)
