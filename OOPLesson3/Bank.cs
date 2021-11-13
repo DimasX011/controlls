@@ -1,15 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Runtime.InteropServices;
 using System.Text;
 
 namespace OOPLesson3
 {
+
     class Bank
     {
         private string number;
         private int balance;
         private string type;
         bool TakeBalance = false;
+
 
         public string Number
         {
@@ -48,23 +51,61 @@ namespace OOPLesson3
         }
 
         List<string> Banks = new List<string>();
-       
+
         
-       public Bank(int BalanceValue, string TypeValue, string Number)
+
+        public static bool operator ==(Bank bank, Bank bank1)
+        {
+            return (bank.number == bank1.number);
+        }
+        public static bool operator !=(Bank bank, Bank bank1)
+        {
+            return (bank.number != bank1.number);
+        }
+
+        public bool Equals(Bank bank, Bank bank1)
+        {
+            bool areEqual = false;
+
+            if (bank.number == bank1.number && bank.balance == bank1.balance)
+            {
+                areEqual = true;
+            }
+            return areEqual;
+        }
+
+        public bool GetHashCode(Bank bank, Bank bank1)
+        {
+            if (bank.GetHashCode() == bank1.GetHashCode())
+            {
+                return true;
+            }
+            return false;
+        }
+
+        public Bank bank;
+        private static Storage storage;
+
+        public Bank(int BalanceValue, string TypeValue, string NumberOp)
         {
             Balance = BalanceValue;
             Type = TypeValue;
-            Number = GenerateNumber();
-            Bank bank = new Bank(Balance, Type, Number);
-            Storage storage = new Storage();
-            storage.AddStorage(bank);
+            NumberOp = GenerateNumber();
+            Number = NumberOp;
+            Storage.AddStorage(new Bank {Balance = BalanceValue, Type = TypeValue, Number = NumberOp });
         }
 
+        
+        public Bank()
+        {
+            
+        }
+       
         public string GenerateNumber()
         {
             Random rnd = new Random();
             string numbervalue = "";
-            for (int i = 0; i < 11; i++)
+            for (int i = 0; i < 5; i++)
                 {
                 var value = rnd.Next(0, 10);
                 string gen = value.ToString();

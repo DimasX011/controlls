@@ -6,9 +6,9 @@ namespace OOPLesson3
 {
     class Storage
     {
-        List<Bank> banks = new List<Bank>();
+       static List<Bank> banks = new List<Bank>();
 
-        public void  AddStorage(Bank bank)
+       static public void  AddStorage(Bank bank)
         {
             banks.Add(bank);
         }
