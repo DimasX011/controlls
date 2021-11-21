@@ -6,7 +6,9 @@ namespace RPGMechanics.Objects.TypeHero.Classes
 {
     class Monk : Skin
     {
-        const int health = 220;
+        internal int health = 220;
+        internal double heal = 50;
+        internal int dps = 60;
 
         public Monk()
         {
@@ -17,6 +19,11 @@ namespace RPGMechanics.Objects.TypeHero.Classes
         {
 
             return TakeDmg(health, valuedmg);
+        }
+
+        public double Heal()
+        {
+            return Deffender(health, heal);
         }
     }
 }

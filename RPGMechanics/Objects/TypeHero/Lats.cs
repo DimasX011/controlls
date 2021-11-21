@@ -7,15 +7,21 @@ namespace RPGMechanics.Objects.TypeHero
     class Lats
     {
      
-        protected int resistancedmg = 16;
+        public int resistancedmg = 16;
         public Lats()
         {
             
         }
-        protected double TakeDmg(int Classhealth,double valuedmg)
+        protected double TakeDmg(double Classhealth,double valuedmg)
         {
           Damage dmg = new Damage();
           return dmg.TakeDamage(Classhealth, valuedmg, resistancedmg);
+        }
+
+        protected double Deffender(double health, double value)
+        {
+            Damage dmg = new Damage();
+            return dmg.Deffender(health, value);
         }
         
     }

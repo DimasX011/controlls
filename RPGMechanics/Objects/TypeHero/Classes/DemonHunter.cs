@@ -6,7 +6,9 @@ namespace RPGMechanics.Objects.TypeHero.Classes
 {
     class DemonHunter : Skin 
     {
-        const int health = 250;
+        internal double health = 250;
+        internal int dps = 60;
+        internal double heal = 45;
 
         public DemonHunter()
         {
@@ -15,8 +17,13 @@ namespace RPGMechanics.Objects.TypeHero.Classes
 
         public double DHdmg(int valuedmg)
         {
+            return TakeDmg((int)health, valuedmg);
+        }
 
-            return TakeDmg(health, valuedmg);
+        public double Metamorphosis()
+        {
+            dps = dps + 25;
+            return Deffender(health, heal);
         }
     }
 }

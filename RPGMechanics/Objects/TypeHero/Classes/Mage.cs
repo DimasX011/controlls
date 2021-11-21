@@ -6,7 +6,9 @@ namespace RPGMechanics.Objects.TypeHero.Classes
 {
     class Mage : Cloth
     {
-        const int health = 220;
+        internal int health = 220;
+        internal int heal = 50;
+        internal int dps = 60;
 
         public Mage()
         {
@@ -17,6 +19,11 @@ namespace RPGMechanics.Objects.TypeHero.Classes
         {
 
             return TakeDmg(health, valuedmg);
+        }
+
+        public double Heal()
+        {
+            return Deffender(health, heal);
         }
     }
 }

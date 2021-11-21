@@ -6,7 +6,10 @@ namespace RPGMechanics.Objects.TypeHero.Classes
 {
     class Druid : Skin 
     {
-        const int health = 250;
+        internal int health = 250;
+        internal double heal = 50;
+        internal double dps = 55;
+
 
         public Druid()
         {
@@ -17,6 +20,11 @@ namespace RPGMechanics.Objects.TypeHero.Classes
         {
 
             return TakeDmg(health, valuedmg);
+        }
+
+        public double Heal()
+        {
+            return Deffender(health, heal);
         }
     }
 }

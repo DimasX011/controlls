@@ -6,7 +6,9 @@ namespace RPGMechanics.Objects.TypeHero.Classes
 {
     class Shaman : ChainMail
     {
-        private int health = 220;
+        internal int health = 220;
+        internal int dps = 60;
+        internal double heal = 65;
 
         public Shaman()
         {
@@ -19,14 +21,9 @@ namespace RPGMechanics.Objects.TypeHero.Classes
             return TakeDmg(health, valuedmg);
         }
 
-        public int lightning(int classHealth)
+        public double Heal()
         {
-           return classHealth = classHealth - 50;
-        }
-
-        public void Healing()
-        {
-            health = health + 25;
+            return Deffender(health, heal);
         }
     }
 }

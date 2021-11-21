@@ -6,7 +6,9 @@ namespace RPGMechanics.Objects.TypeHero.Classes
 {
     class Hunter : ChainMail
     {
-        const int health = 220;
+        internal int health = 220;
+        internal double heal = 45;
+        internal int dps = 60;
 
         public Hunter()
         {
@@ -17,6 +19,11 @@ namespace RPGMechanics.Objects.TypeHero.Classes
         {
 
             return TakeDmg(health, valuedmg);
+        }
+
+        public double Heal()
+        {
+            return Deffender(health, heal);
         }
     }
 }

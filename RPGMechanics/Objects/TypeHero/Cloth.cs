@@ -6,7 +6,7 @@ namespace RPGMechanics.Objects.TypeHero
 {
     class Cloth
     {
-        int resistancedmg = 2;
+        internal int resistancedmg = 2;
         protected int Takeover = 0;
         public Cloth()
         {
@@ -16,6 +16,12 @@ namespace RPGMechanics.Objects.TypeHero
         {
             Damage dmg = new Damage();
             return dmg.TakeDamage(Classhealth + Takeover, valuedmg, resistancedmg);
+        }
+
+        protected double Deffender(double health, double value)
+        {
+            Damage dmg = new Damage();
+            return dmg.Deffender(health, value);
         }
     }
 }

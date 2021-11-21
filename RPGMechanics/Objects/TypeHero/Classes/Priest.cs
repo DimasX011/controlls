@@ -6,7 +6,9 @@ namespace RPGMechanics.Objects.TypeHero.Classes
 {
     class Priest : Cloth
     {
-        private int health = 250;
+        internal int health = 250;
+        internal double heal = 100;
+        internal int dps = 60;
 
         public Priest()
         {
@@ -18,19 +20,15 @@ namespace RPGMechanics.Objects.TypeHero.Classes
             return TakeDmg(health, valuedmg);
         }
 
+        public double Heal()
+        {
+            return Deffender(health, heal);
+        }
+
         public void WordOfPowerShield()
         {
             Takeover = 55;
         }
 
-        public int PiercingTheMind(int classHealth)
-        {
-            return classHealth - 47;
-        }
-
-        public void FasterHealing()
-        {
-            health = health + 35;
-        }
     }
 }

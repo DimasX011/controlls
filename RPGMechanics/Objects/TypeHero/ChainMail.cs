@@ -6,7 +6,7 @@ namespace RPGMechanics.Objects.TypeHero
 {
     class ChainMail
     {
-        int resistancedmg = 12;
+        internal int resistancedmg = 12;
         public ChainMail()
         {
 
@@ -15,6 +15,12 @@ namespace RPGMechanics.Objects.TypeHero
         {
             Damage dmg = new Damage();
             return dmg.TakeDamage(Classhealth, valuedmg, resistancedmg);
+        }
+
+        protected double Deffender(double health, double value)
+        {
+            Damage dmg = new Damage();
+            return dmg.Deffender(health, value);
         }
     }
 }

@@ -6,7 +6,10 @@ namespace RPGMechanics.Objects.TypeHero.Classes
 {
     class Warrior : Lats
     {
-        const int health = 250;
+        internal
+            int health = 250;
+        internal int dps = 60;
+        internal double heal = 60;
 
         public Warrior()
         {
@@ -23,14 +26,11 @@ namespace RPGMechanics.Objects.TypeHero.Classes
         {
             resistancedmg = 90;
         }
-         public void EndEffect()
-        {
-            resistancedmg = 16;
-        }
 
-        public int ShieldStrike(int Classhealth)
+        public double Heal()
         {
-            return Classhealth - 50;
+            Block();
+            return Deffender(health, heal);
         }
 
     }

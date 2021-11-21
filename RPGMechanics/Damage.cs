@@ -18,5 +18,10 @@ namespace RPGMechanics
         {
             return System.Math.Round((double)(value1-(value1 * (value2 / 100))));
         }
+
+        public double Deffender(double healthheal, double valuehealth)
+        {
+            return healthheal + valuehealth;
+        }
     }
 }

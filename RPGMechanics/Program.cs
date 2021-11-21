@@ -7,13 +7,7 @@ namespace RPGMechanics
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
-            Paladin paladin = new Paladin();
-            double health = 0;
-            health = paladin.Paladindmg(15);
-
-            Console.WriteLine("Ваше здоровье:"+health);
-            
+            new Gameplay();
         }
     }
 }

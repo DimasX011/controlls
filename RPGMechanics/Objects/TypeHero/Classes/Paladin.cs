@@ -7,8 +7,9 @@ namespace RPGMechanics.Objects.TypeHero.Classes
   
     class Paladin : Lats
     {
-    
-        private int health = 250;
+        internal double heal = 75;
+        internal int dps = 60;
+        internal int health = 250;
         bool buble = false;
 
         public Paladin()
@@ -20,7 +21,12 @@ namespace RPGMechanics.Objects.TypeHero.Classes
         {
            return TakeDmg(health, valuedmg);
         }
-      
+
+        public double Heal()
+        {
+            return Deffender(health, heal);
+        }
+
         public void Bubl()
         {
             int currentHealth = health;

@@ -6,26 +6,23 @@ namespace RPGMechanics.Objects.TypeHero.Classes
 {
     class Rogue : Skin
     {
-        private int health = 220;
+        internal double health = 220;
+        internal int dps = 60;
+        internal double heal = 45;
 
         public Rogue()
         {
 
         }
 
-        public double Roguedmg(int valuedmg)
+        public double Roguedmg(double valuedmg)
         {
-            return TakeDmg(health, valuedmg);
+            return TakeDmg((int)health, valuedmg);
         }
 
-        public int HitInTheBack(int classHealth)
+        public double Heal()
         {
-            return classHealth - 45;
-        }
-
-        public void ScarletViolet()
-        {
-            health = health + 30;
+            return Deffender(health, heal);
         }
     }
 }

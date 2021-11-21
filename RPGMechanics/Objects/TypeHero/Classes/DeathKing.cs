@@ -6,17 +6,23 @@ namespace RPGMechanics.Objects.TypeHero.Classes
 {
     class DeathKing : Lats
     {
-        const int health = 300;
+        internal double health = 300;
+        internal int dps = 65;
+        internal double heal = 25;
 
         public DeathKing()
         {
 
         }
 
-        public double DKdmg(int valuedmg)
+        public double DKdmg(double valuedmg)
         {
-
             return TakeDmg(health, valuedmg);
+        }
+
+        public double Vampiric()
+        {
+            return Deffender(health, heal);
         }
     }
 }

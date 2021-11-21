@@ -6,7 +6,9 @@ namespace RPGMechanics.Objects.TypeHero.Classes
 {
     class Warlock : Cloth
     {
-        private int health = 300;
+        internal int health = 300;
+        internal int dps = 60;
+        internal double heal = 55;
 
         public Warlock()
         {
@@ -19,11 +21,9 @@ namespace RPGMechanics.Objects.TypeHero.Classes
             return TakeDmg(health, valuedmg);
         }
 
-        public double StealingLife(int classHealth)
+        public double Heal()
         {
-            classHealth = classHealth - 25;
-            health = health + 15;
-            return classHealth;
+            return Deffender(health, heal);
         }
     }
 }
